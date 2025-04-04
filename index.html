@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+
+  <div class="container py-5">
+    <div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" oninput="nameValidation()" id="productName" placeholder="name@example.com">
+        <label for="productName">Product Name</label>
+        <p id="nameMsg" class="text-danger fw-bold d-none">product name must start with capital letter</p>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" id="productPrice" oninput="priceValidation()" placeholder="Price@example.com">
+        <label for="productPrice">Product Price</label>
+        <p id="priceMsg" class="text-danger fw-bold d-none">product price between 100 and 999</p>
+
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="productCategory" oninput="categoryValidation()" placeholder="Category@example.com">
+        <label for="productCategory">Product Category</label>
+        <p id="categoryMsg" class="text-danger fw-bold d-none">product category must be tv,laptop or mobile</p>
+
+      </div>
+      <div class="form-floating mb-3">
+        <textarea type="text" class="form-control" id="productDesc" oninput="descValidation()" placeholder="Desc@example.com"></textarea>
+        <label for="productDesc">Product Desc</label>
+        <p id="descMsg" class="text-danger fw-bold d-none">product desc must be 5 chars or more</p>
+
+      </div>
+
+      <button id="addBtn" class="btn btn-primary" onclick="createProduct()">Add Product</button>
+      <button id="updateBtn" class="btn btn-warning d-none" onclick="updateProduct()">Update Product</button>
+
+    </div>
+
+    <input type="text" id="search" class="form-control my-4 w-50 mx-auto" oninput="searchProducts()" placeholder="search....">
+
+    <div class="py-5">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>price</th>
+            <th>category</th>
+            <th>desc</th>
+            <th>delete</th>
+            <th>update</th>
+          </tr>
+        </thead>
+
+        <tbody id="data">
+     
+        </tbody>
+  
+      </table>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
